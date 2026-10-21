@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@main
+        uses: stefan-coding/buildozer-action@v1
         id: buildozer
         with:
           command: buildozer android debug
@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: ${{ steps.buildozer.outputs.filename }}
+          path: bin/*.apk
